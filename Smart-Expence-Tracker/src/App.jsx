@@ -7,4 +7,22 @@ function App(){
   const[title, setTitle] = useState("");
   const[amount, setAmount] = useState("");
   const[type, setType] = useState("")
+
+
+
+  return(
+    <div>
+      <label>Transactions:</label>
+      <input type="number"
+      value={transactions}
+      onChange={(e)=>{
+        setTransactions(e.target.value)
+      }}
+      placeholder="Enter Transactions..."
+      
+      />
+    </div>
+  )
 }
+
+
