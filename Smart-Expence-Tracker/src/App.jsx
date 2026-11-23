@@ -12,15 +12,6 @@ function App(){
 
   return(
     <div>
-      <label>Transactions:</label>
-      <input type="number"
-      value={transactions}
-      onChange={(e)=>{
-        setTransactions(e.target.value)
-      }}
-      placeholder="Enter Transactions..."
-      />
-
        <label>Title:</label>
       <input type="text"
       value={title}
@@ -39,16 +30,19 @@ function App(){
       placeholder="Enter Amount..."
       />
 
-      <label>Type:</label>
-      <select type="text"
-      value={type}
-      onChange={(e)=>{
-        setType(e.target.value)
+     <label>Type:</label>
+    <select
+    value={type}
+    onChange={(e) => {
+    setType(e.target.value);
       }}
-      placeholder="Enter Type..."
-      />
+   >
+  <option value="">Select Type</option>
+  <option value="Income">Income</option>
+  <option value="Expense">Expense</option>
+  </select>
     </div>
   )
 }
 
-
+export default App;
