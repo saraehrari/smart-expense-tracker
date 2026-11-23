@@ -9,13 +9,13 @@ function App(){
   const[type, setType] = useState("")
 
   function addTracker(){
-   { title ='';
-    amount ='';
-    type = '';}
-
-    setTransactions([...transactions,addTracker]);
+  const Newtracker= {
+    title =(""),
+    amount =(""),
+    type = ("")
   }
-
+  
+ setTransactions([...transactions,Newtracker]);
 
   return(
     <div>
