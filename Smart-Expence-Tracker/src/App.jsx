@@ -8,6 +8,13 @@ function App(){
   const[amount, setAmount] = useState("");
   const[type, setType] = useState("")
 
+  function addTracker(){
+   { title ='';
+    amount ='';
+    type = '';}
+
+    setTransactions([...transactions,addTracker]);
+  }
 
 
   return(
