@@ -10,12 +10,15 @@ function App(){
 
   function addTracker(){
   const Newtracker= {
-    title =(""),
-    amount =(""),
-    type = ("")
+    title :title,
+    amount : amount,
+    type : type,
   }
-  
- setTransactions([...transactions,Newtracker]);
+  setTitle("");
+  setAmount("");
+  setType("");
+
+  setTransactions([...transactions,Newtracker]);
 
   return(
     <div>
