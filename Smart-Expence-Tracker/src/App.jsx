@@ -37,9 +37,9 @@ function App() {
   }
 
   return (
-    <div className="tracker-card">
+    <div>
       {/* HEADER */}
-      <header className="header">
+      <header>
         <h1>Smart Expense Tracker</h1>
         <p>Manage your money. Track your progress.</p>
       </header>
