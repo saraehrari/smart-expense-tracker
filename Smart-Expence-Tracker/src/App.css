@@ -1,0 +1,128 @@
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e1020;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* MAIN CONTAINER */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 20px;
+}
+
+/* HEADINGS */
+h1 {
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 21px;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* PARAGRAPHS */
+p {
+  color: #a5abc2;
+  font-size: 14px;
+}
+
+/* FORM LABELS */
+label {
+  display: block;
+  color: #c4c9dc;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+/* INPUTS AND SELECT */
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 22px;
+  background: #191d34;
+  border: 1px solid #343a58;
+  border-radius: 9px;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #777f9c;
+}
+
+input:focus,
+select:focus {
+  border-color: #9870ff;
+  box-shadow: 0 0 0 3px rgba(152, 112, 255, 0.12);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #7655ee, #a16af5);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(137, 91, 245, 0.3);
+}
+
+/* TRANSACTION ITEMS */
+#root > div > div {
+  width: 100%;
+  max-width: 520px;
+  background: #191d34;
+  padding: 25px;
+  border: 1px solid #303752;
+  border-radius: 15px;
+  margin-top: 25px;
+}
+
+/* TRANSACTION AMOUNTS */
+#root > div > div p {
+  margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  #root {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}
