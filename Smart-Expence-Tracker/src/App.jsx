@@ -1,60 +1,90 @@
 import { useState } from "react";
 
 
+function App() {
 
-function App(){
-  const[transactions, setTransactions] = useState([]);
-  const[title, setTitle] = useState("");
-  const[amount, setAmount] = useState("");
-  const[type, setType] = useState("")
+  // STATES: Store transactions and input values
+  const [transactions, setTransactions] = useState([]);
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [type, setType] = useState("");
 
-  function addTracker(){
-  const Newtracker= {
-    title :title,
-    amount : amount,
-    type : type,
+   // ADD TRANSACTION FUNCTION
+
+  function addTracker() {
+    // Check if all fields are filled
+
+    if (!title || !amount || !type) {
+      alert("Please fill in all fields!");
+      return;
+    }
+
+     // Create a new transaction object
+    const Newtracker = {
+      title: title,
+      amount: Number(amount),
+      type: type,
+    };
+
+    // Add the new transaction to the array
+    setTransactions([...transactions, Newtracker]);
+
+
+      // Clear all input fields
+    setTitle("");
+    setAmount("");
+    setType("");
   }
-  setTitle("");
-  setAmount("");
-  setType("");
 
-  setTransactions([...transactions,Newtracker]);
+  return (
+    <div className="tracker-card">
+      {/* HEADER */}
+      <header className="header">
+        <h1>Smart Expense Tracker</h1>
+        <p>Manage your money. Track your progress.</p>
+      </header>
 
-  return(
-    <div>
-       <label>Title:</label>
-      <input type="text"
-      value={title}
-      onChange={(e)=>{
-        setTitle(e.target.value)
-      }}
-      placeholder="Enter Title..."
+        {/* TRANSACTION FORM */}
+      <label>Title:</label>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter Title..."
       />
 
-       <label>Amount:</label>
-      <input type="number"
-      value={amount}
-      onChange={(e)=>{
-        setAmount(e.target.value)
-      }}
-      placeholder="Enter Amount..."
+      <label>Amount:</label>
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        placeholder="Enter Amount..."
       />
 
-     <label>Type:</label>
-    <select
-    value={type}
-    onChange={(e) => {
-    setType(e.target.value);
-      }}
-   >
-  <option value="">Select Type</option>
-  <option value="Income">Income</option>
-  <option value="Expense">Expense</option>
-  </select>
+      <label>Type:</label>
+      <select
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+      >
+        <option value="">Select Type</option>
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+      </select>
+
+      <button onClick={addTracker}>
+        Add Transaction
+      </button>
+
+
+      {transactions.map((item, index) => (
+        <div key={index}>
+          <h3>{item.title}</h3>
+          <p>Amount: ${item.amount}</p>
+          <p>Type: {item.type}</p>
+        </div>
+      ))}
     </div>
-  )
-}}
+  );
+}
 
 export default App;
-
-
